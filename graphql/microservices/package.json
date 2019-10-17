@@ -1,0 +1,17 @@
+{
+    "name": "graphql-ms",
+    "version": "1.0.0",
+    "description": "An example on setting up micro-services in GraphQL",
+    "license": "MIT",
+    "scripts": {
+        "init": "lerna run init",
+        "start-service-classes": "cd services/classes && npm start",
+        "start-service-lessons": "cd services/lessons && npm start",
+        "start-services": "concurrently \"npm:start-service-*\"",
+        "start-gateway": "cd services/gateway && npm start"
+    },
+    "devDependencies": {
+        "concurrently": "^5.0.0",
+        "lerna": "^3.18.1"
+    }
+}
