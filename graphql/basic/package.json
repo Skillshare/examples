@@ -4,7 +4,7 @@
     "license": "UNLICENSED",
     "scripts": {
         "init": "yarn install && (cd db && prisma2 generate)",
-        "dev": "ts-node-dev src/app.ts"
+        "start": "ts-node-dev src/app.ts"
     },
     "devDependencies": {
         "ts-node-dev": "^1.0.0-pre.43",
