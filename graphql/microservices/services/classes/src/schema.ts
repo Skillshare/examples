@@ -18,26 +18,36 @@ export const typeDefs = gql`
 
     extend type Query {
         class(id: Int!): Class!
+        classes: [Class!]!
     }
 `;
 
 export const resolvers = {
     Query: {
-        async class(root: any, { id }) {
-            return await db.classes.findOne({
-                where: { id }
-            });
+        class(root: any, { id }) {
+            return db
+                .classes
+                .findOne({
+                    where: { id }
+                });
+        },
+        classes() {
+            return db
+                .classes
+                .findMany();
         }
     },
     Class: {
-        async lessons(root: Class) {
-            return await db.classLessons.findMany({
-                where: {
-                    class: {
-                        id: root.id
+        lessons(root: Class) {
+            return db
+                .classLessons
+                .findMany({
+                    where: {
+                        class: {
+                            id: root.id
+                        }
                     }
-                }
-            })
+                });
         }
     }
 }
