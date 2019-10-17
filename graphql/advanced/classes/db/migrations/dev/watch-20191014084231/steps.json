@@ -1,0 +1,54 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateModel",
+      "name": "ClassLesson",
+      "embedded": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "ClassLesson",
+      "name": "id",
+      "type": {
+        "Base": "Int"
+      },
+      "arity": "required",
+      "isUnique": false,
+      "id": {
+        "strategy": "Auto",
+        "sequence": null
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "ClassLesson",
+      "name": "class",
+      "type": {
+        "Relation": {
+          "to": "Class",
+          "to_fields": [
+            "id"
+          ],
+          "name": "ClassToClassLesson",
+          "on_delete": "None"
+        }
+      },
+      "arity": "optional",
+      "isUnique": false
+    },
+    {
+      "stepType": "UpdateField",
+      "model": "Class",
+      "name": "lessons",
+      "type": {
+        "Relation": {
+          "to": "ClassLesson",
+          "to_fields": [],
+          "name": "ClassToClassLesson",
+          "on_delete": "None"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+    "name": "class-lessons-service",
+    "description": "Provides classes",
+    "license": "UNLICENSED",
+    "scripts": {
+        "init": "yarn install && (cd db && prisma2 generate)",
+        "start": "ts-node-dev src/app.ts"
+    },
+    "devDependencies": {
+        "ts-node-dev": "^1.0.0-pre.43",
+        "typescript": "^3.6.4"
+    },
+    "dependencies": {
+        "@apollo/federation": "^0.10.2",
+        "apollo-server": "^2.9.6",
+        "graphql": "^14.5.8"
+    }
+}

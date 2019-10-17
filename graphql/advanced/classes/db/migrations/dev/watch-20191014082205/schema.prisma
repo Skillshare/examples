@@ -1,0 +1,16 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:dev.db"
+  output   = "../node_modules/@generated/photon"
+}
+
+generator photon {
+  provider = "photonjs"
+}
+
+model Class {
+  id            Int  @id
+  title         String  @unique
+  description   String?
+  lessons       Int[]
+}

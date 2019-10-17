@@ -1,0 +1,18 @@
+{
+    "name": "gateway",
+    "description": "Provides classes",
+    "license": "UNLICENSED",
+    "scripts": {
+        "init": "yarn install",
+        "start": "ts-node-dev src/app.ts"
+    },
+    "devDependencies": {
+        "ts-node-dev": "^1.0.0-pre.43",
+        "typescript": "^3.6.4"
+    },
+    "dependencies": {
+        "@apollo/gateway": "^0.10.7",
+        "apollo-server": "^2.9.6",
+        "graphql": "^14.5.8"
+    }
+}
