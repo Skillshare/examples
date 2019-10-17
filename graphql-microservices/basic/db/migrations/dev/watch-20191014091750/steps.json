@@ -1,0 +1,115 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateModel",
+      "name": "Class",
+      "embedded": false
+    },
+    {
+      "stepType": "CreateModel",
+      "name": "ClassLesson",
+      "embedded": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Class",
+      "name": "id",
+      "type": {
+        "Base": "Int"
+      },
+      "arity": "required",
+      "isUnique": false,
+      "id": {
+        "strategy": "Auto",
+        "sequence": null
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Class",
+      "name": "title",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": true
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Class",
+      "name": "description",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "optional",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Class",
+      "name": "lessons",
+      "type": {
+        "Relation": {
+          "to": "ClassLesson",
+          "to_fields": [],
+          "name": "ClassToClassLesson",
+          "on_delete": "None"
+        }
+      },
+      "arity": "list",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "ClassLesson",
+      "name": "id",
+      "type": {
+        "Base": "Int"
+      },
+      "arity": "required",
+      "isUnique": false,
+      "id": {
+        "strategy": "Auto",
+        "sequence": null
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "ClassLesson",
+      "name": "title",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": true
+    },
+    {
+      "stepType": "CreateField",
+      "model": "ClassLesson",
+      "name": "description",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "optional",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "ClassLesson",
+      "name": "class",
+      "type": {
+        "Relation": {
+          "to": "Class",
+          "to_fields": [
+            "id"
+          ],
+          "name": "ClassToClassLesson",
+          "on_delete": "None"
+        }
+      },
+      "arity": "optional",
+      "isUnique": false
+    }
+  ]
+}
